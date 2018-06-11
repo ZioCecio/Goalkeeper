@@ -37,7 +37,12 @@ public class GameManager : MonoBehaviour {
         mod = LevelManager.Instance.level;
 
         reactionTimes = new List<float>();
-		maxWait = 1f;
+        maxWait = LevelManager.Instance.difficult;
+        if (maxWait == 0f)
+            maxWait = 1f;
+
+        Debug.Log(maxWait);
+
 		clicked = false;
 		sleep = false;
         lost = false;
@@ -127,7 +132,7 @@ public class GameManager : MonoBehaviour {
 		StopReactionTimer ();
 
 		sleep = true;
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (maxWait);
 		sleep = false;
 
         if(mod == 2)

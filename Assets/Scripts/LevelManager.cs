@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour {
 
     public static LevelManager Instance;
     public int level;
+    public float difficult;
 
     public void Awake()
     {
@@ -16,5 +17,6 @@ public class LevelManager : MonoBehaviour {
     public void Start()
     {
         level = 0;
+        difficult = 0f;
     }
 }

@@ -6,21 +6,24 @@ using UnityEngine.UI;
 using TMPro;
 
 public class OptionsMenu : MonoBehaviour {
-
-    //public AudioMixer MasterMixer;
-    [SerializeField]public TMP_Dropdown resolutionDropDown;
+    [SerializeField] public TMP_Dropdown resolutionDropDown;
+    [SerializeField]
+    public TMP_Dropdown difficultyDP;
     Resolution[] ScreenResolutions;
+    public float timeDifficult;
 
     void Start()
     {
-        //MasterMixer.SetFloat("MasterVolume", 20);
         int currentResIndex = 0;
         ScreenResolutions = Screen.resolutions;
         resolutionDropDown.ClearOptions();
+        difficultyDP.value = PlayerPrefs.GetInt("Difficulty");
+        difficultyDP.RefreshShownValue();
 
         List<string> options = new List<string>();
-        
-        for(int i = 0; i < ScreenResolutions.Length; i++)
+        //PlayerPrefs.GetInt("Difficulty", 0);
+
+        for (int i = 0; i < ScreenResolutions.Length; i++)
         {
             string option = ScreenResolutions[i].width + "x" + ScreenResolutions[i].height;
             options.Add(option);
@@ -37,11 +40,6 @@ public class OptionsMenu : MonoBehaviour {
         resolutionDropDown.RefreshShownValue();
     }
 
-    /*public void SetVolume(float volume)
-    {
-        MasterMixer.SetFloat("MasterVolume", volume);
-    }*/
-
     public void SetQuality (int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
@@ -56,6 +54,23 @@ public class OptionsMenu : MonoBehaviour {
     {
         Resolution resolution = ScreenResolutions[choice];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetDifficult(int choice)
+    {
+        PlayerPrefs.SetInt("Difficulty", choice);
+        difficultyDP.value = choice;
+        difficultyDP.RefreshShownValue();
+
+        if (choice == 0)
+            timeDifficult = 1f;
+        if (choice == 1)
+            timeDifficult = .75f;
+        if (choice == 2)
+            timeDifficult = .5f;
+
+        LevelManager.Instance.difficult = timeDifficult;
+        
     }
 
 }
