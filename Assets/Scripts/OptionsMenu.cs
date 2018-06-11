@@ -7,13 +7,13 @@ using TMPro;
 
 public class OptionsMenu : MonoBehaviour {
 
-    public AudioMixer MasterMixer;
+    //public AudioMixer MasterMixer;
     [SerializeField]public TMP_Dropdown resolutionDropDown;
     Resolution[] ScreenResolutions;
 
     void Start()
     {
-        MasterMixer.SetFloat("MasterVolume", 20);
+        //MasterMixer.SetFloat("MasterVolume", 20);
         int currentResIndex = 0;
         ScreenResolutions = Screen.resolutions;
         resolutionDropDown.ClearOptions();
@@ -37,10 +37,10 @@ public class OptionsMenu : MonoBehaviour {
         resolutionDropDown.RefreshShownValue();
     }
 
-    public void SetVolume(float volume)
+    /*public void SetVolume(float volume)
     {
         MasterMixer.SetFloat("MasterVolume", volume);
-    }
+    }*/
 
     public void SetQuality (int qualityIndex)
     {

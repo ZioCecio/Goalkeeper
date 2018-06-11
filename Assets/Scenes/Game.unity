@@ -8554,7 +8554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8ad2d8edbc72047a1ddaecd74b3199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MasterMixer: {fileID: 0}
   resolutionDropDown: {fileID: 873036541}
 --- !u!114 &1703625380
 MonoBehaviour:

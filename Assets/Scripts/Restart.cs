@@ -15,4 +15,9 @@ public class Restart : MonoBehaviour {
         SceneManager.LoadScene(0);
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("Game Closed!");
+        Application.Quit();
+    }
 }

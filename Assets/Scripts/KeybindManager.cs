@@ -48,4 +48,17 @@ public class KeybindManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void ClearControls()
+    {
+        PlayerPrefs.DeleteAll();
+        tl = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("topLeftKey", "Keypad7"));
+        ml = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("middleLeftKey", "Keypad4"));
+        bl = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("bottomLeftKey", "Keypad1"));
+        tc = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("topCenterKey", "Keypad8"));
+        bc = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("bottomCenterKey", "Keypad2"));
+        tr = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("topRightKey", "Keypad9"));
+        mr = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("middleRightKey", "Keypad6"));
+        br = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("bottomRightKey", "Keypad3"));
+    }
 }

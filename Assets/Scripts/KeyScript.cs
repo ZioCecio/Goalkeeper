@@ -128,19 +128,24 @@ public class KeyScript : MonoBehaviour
             case "tr":
                 KeybindManager.Km.tr = newKey;
                 buttonText.text = KeybindManager.Km.tr.ToString();
-                PlayerPrefs.SetString("topLeftKey", KeybindManager.Km.tr.ToString());
+                PlayerPrefs.SetString("topRightKey", KeybindManager.Km.tr.ToString());
                 break;
             case "mr":
                 KeybindManager.Km.mr = newKey;
                 buttonText.text = KeybindManager.Km.mr.ToString();
-                PlayerPrefs.SetString("middleLeftKey", KeybindManager.Km.mr.ToString());
+                PlayerPrefs.SetString("middleRightKey", KeybindManager.Km.mr.ToString());
                 break;
             case "br":
                 KeybindManager.Km.br = newKey;
                 buttonText.text = KeybindManager.Km.br.ToString();
-                PlayerPrefs.SetString("bottomLeftKey", KeybindManager.Km.br.ToString());
+                PlayerPrefs.SetString("bottomRightKey", KeybindManager.Km.br.ToString());
                 break;
         }
         yield return null;
+    }
+
+    public void ClearControls()
+    {
+        KeybindManager.Km.ClearControls();
     }
 }
