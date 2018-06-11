@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
     public void Awake()
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void Start()

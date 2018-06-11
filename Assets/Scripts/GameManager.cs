@@ -219,7 +219,7 @@ public class GameManager : MonoBehaviour {
         {
             sleep = true;
             clicked = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -233,7 +233,7 @@ public class GameManager : MonoBehaviour {
             Timer.Instance.Stop();
             sleep = true;
             clicked = true;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -297,7 +297,7 @@ public class GameManager : MonoBehaviour {
             sleep = true;
             clicked = true;
             Timer.Instance.Stop();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 
@@ -323,7 +323,7 @@ public class GameManager : MonoBehaviour {
             sleep = true;
             clicked = true;
             Timer.Instance.Stop();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }
