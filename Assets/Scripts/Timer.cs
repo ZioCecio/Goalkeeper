@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour {
     public void Reset()
     {
         if (!stopwatch)
-            timer = 5f;
+            timer = 30f;
         else
             timer = 0f;
 

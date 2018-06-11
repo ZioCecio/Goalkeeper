@@ -228,7 +228,7 @@ public class GameManager : MonoBehaviour {
         if (!RefreshReactionTimer())
             SelectPoint();
 
-        if (ScoreUI.Instance.GetScore() >= 10)
+        if (ScoreUI.Instance.GetScore() >= 20)
         {
             Timer.Instance.Stop();
             sleep = true;
@@ -239,7 +239,7 @@ public class GameManager : MonoBehaviour {
 
     private void UpdateMod2()
     {
-        if (ScoreUI.Instance.GetScore() >= 5 && !flags[0])
+        if (ScoreUI.Instance.GetScore() >= 10 && !flags[0])
         {
             activePoints.Remove(0);
             activePoints.Remove(1);
@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour {
             ChangeActivePoints();
             flags[0] = true;
         }
-        else if (ScoreUI.Instance.GetScore() < 5 && flags[0])
+        else if (ScoreUI.Instance.GetScore() < 10 && flags[0])
         {
             activePoints.Clear();
             activePoints.Add(0);
@@ -259,14 +259,14 @@ public class GameManager : MonoBehaviour {
             flags[0] = false;
         }
 
-        if (ScoreUI.Instance.GetScore() >= 10 && !flags[1])
+        if (ScoreUI.Instance.GetScore() >= 20 && !flags[1])
         {
             activePoints.Add(0);
             activePoints.Add(1);
             ChangeActivePoints();
             flags[1] = true;
         }
-        else if (ScoreUI.Instance.GetScore() < 10 && flags[1])
+        else if (ScoreUI.Instance.GetScore() < 20 && flags[1])
         {
             activePoints.Remove(0);
             activePoints.Remove(1);
@@ -274,14 +274,14 @@ public class GameManager : MonoBehaviour {
             flags[1] = false;
         }
 
-        if (ScoreUI.Instance.GetScore() >= 15 && !flags[2])
+        if (ScoreUI.Instance.GetScore() >= 30 && !flags[2])
         {
             activePoints.Add(6);
             activePoints.Add(7);
             ChangeActivePoints();
             flags[2] = true;
         }
-        else if (ScoreUI.Instance.GetScore() < 15 && flags[2])
+        else if (ScoreUI.Instance.GetScore() < 30 && flags[2])
         {
             activePoints.Remove(6);
             activePoints.Remove(7);
@@ -292,7 +292,7 @@ public class GameManager : MonoBehaviour {
         if (!RefreshReactionTimer())
             SelectPointGame3();
 
-        if (ScoreUI.Instance.GetScore() >= 20)
+        if (ScoreUI.Instance.GetScore() >= 40)
         {
             sleep = true;
             clicked = true;
